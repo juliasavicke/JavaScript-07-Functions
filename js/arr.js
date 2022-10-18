@@ -71,3 +71,10 @@ function reverseArr(numbers) {
   return reversed;
 }
 console.log(reverseArr(nums));
+
+const output = move(numbers, 0, 1);
+console.log("output ===", output);
+function move(array, index, offset) {
+  numbers[index] = numbers[index + offset];
+  console.log(numbers);
+}

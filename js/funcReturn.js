@@ -71,25 +71,31 @@ function min(a, b) {
 //console.log(min(14, 9));
 
 function calculate(num1, num2, action) {
-  let sign = "";
-  let rez = 0;
-  if (action === "composition") {
-    sign = "+";
-    rez = num1 + num2;
-  } else if (action === "subtraction") {
-    sign = "-";
-    rez = num1 - num2;
-  } else if (action === "multiplication") {
-    sign = "*";
-    rez = num1 * num2;
-  } else if (action === "division") {
-    sign = "/";
-    rez = num1 / num2;
-  }
-  return rez;
+  if (action === "composition") return num1 + num2;
+  if (action === "subtraction") return num1 - num2;
+  if (action === "multiplication") return num1 * num2;
+  if (action === "division") return num1 / num2;
+  else return "klaida";
 }
 
 //console.log(calculate(100, 20, `division`));
+
+function calculate1(num1, num2, action) {
+  if (
+    !["composition", "subtraction", "multiplication", "division"].includes(
+      action
+    )
+  ) {
+    return "bad operation";
+  }
+  if (action === "composition") return num1 + num2;
+  if (action === "subtraction") return num1 - num2;
+  if (action === "multiplication") return num1 * num2;
+  if (action === "division") return num1 / num2;
+  //else return "klaida";
+}
+
+console.log(calculate1(100, 20, `division`));
 
 function getFirstLetter(string) {
   let stringUpperCase = string.toUpperCase();
